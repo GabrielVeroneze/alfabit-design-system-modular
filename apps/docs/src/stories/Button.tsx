@@ -2,17 +2,21 @@ import './button.css'
 
 export interface ButtonProps {
     variant?: 'primary' | 'secondary' | 'tertiary'
-    backgroundColor?: string
-    size?: 'small' | 'medium' | 'large'
+    size?: 'xs' | 'sm' | 'md' | 'lg'
     label: string
+    icon?: React.ReactNode
+    iconPosition?: 'left' | 'right'
+    disabled?: boolean
     onClick?: () => void
 }
 
 export const Button = ({
     variant = 'primary',
-    size = 'medium',
-    backgroundColor,
+    size = 'md',
     label,
+    icon,
+    iconPosition = 'left',
+    disabled = false,
     ...props
 }: ButtonProps) => {
     const mode =
@@ -28,7 +32,6 @@ export const Button = ({
                 `storybook-button--${size}`,
                 mode,
             ].join(' ')}
-            style={{ backgroundColor }}
             {...props}
         >
             {label}
