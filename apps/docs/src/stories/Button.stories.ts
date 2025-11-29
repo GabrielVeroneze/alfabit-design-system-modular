@@ -19,6 +19,6 @@ export const Primary: Story = {
     args: {
         variant: 'primary',
         size: 'md',
-        label: 'Primary Button',
+        children: 'Primary Button',
     },
 }
