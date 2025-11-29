@@ -14,7 +14,8 @@
     "dependencies": {
         "react": "^19.2.0",
         "react-dom": "^19.2.0",
-        "styled-components": "^6.1.19"
+        "styled-components": "^6.1.19",
+        "@alfabit/button": "workspace:*"
     },
     "devDependencies": {
         "@chromatic-com/storybook": "^4.1.3",
