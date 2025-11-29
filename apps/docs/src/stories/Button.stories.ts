@@ -1,4 +1,4 @@
-import { Button } from '@alfabit/button'
+import { Button } from '@gabriel_veroneze/alfabit-button'
 import { fn } from 'storybook/test'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
