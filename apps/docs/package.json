@@ -12,10 +12,11 @@
         "build-storybook": "storybook build"
     },
     "dependencies": {
+        "@gabriel_veroneze/alfabit-button": "workspace:*",
+        "@gabriel_veroneze/alfabit-tokens": "^0.1.1",
         "react": "^19.2.0",
         "react-dom": "^19.2.0",
-        "styled-components": "^6.1.19",
-        "@gabriel_veroneze/alfabit-button": "workspace:*"
+        "styled-components": "^6.1.19"
     },
     "devDependencies": {
         "@chromatic-com/storybook": "^4.1.3",
