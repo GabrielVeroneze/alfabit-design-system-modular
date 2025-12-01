@@ -1,0 +1,23 @@
+{
+    "name": "@gabriel_veroneze/alfabit-tokens",
+    "description": "Tokens do Design System Alfabit",
+    "author": {
+        "name": "Gabriel Veroneze"
+    },
+    "license": "MIT",
+    "version": "0.1.0",
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsup src/index.ts --format esm,cjs --dts",
+        "dev": "tsup src/index.ts --format esm,cjs --dts --watch"
+    },
+    "devDependencies": {
+        "tsup": "^8.5.1",
+        "typescript": "^5.9.3"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}
