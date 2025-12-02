@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import { fn } from 'storybook/test'
 import { Button } from '@gabriel_veroneze/alfabit-button'
 import { Input } from '@gabriel_veroneze/alfabit-input'
 import styled from 'styled-components'
@@ -27,20 +28,27 @@ const StyledInput = styled(Input)`
     width: 100%;
 `
 
-const Form = () => {
+interface FormProps {
+    onSubmit: () => void
+    fields: {
+        label: string
+        placeholder: string
+    }[]
+}
+
+const Form = ({ fields, onSubmit }: FormProps) => {
     return (
         <StyledForm>
-            <StyledInputField>
-                <StyledInput label="Nome" placeholder="ex: Jõao da Silva" />
-            </StyledInputField>
-            <StyledInputField>
-                <StyledInput
-                    label="Email"
-                    placeholder="ex: joaosilva@gmail.com"
-                />
-            </StyledInputField>
+            {fields.map((field) => (
+                <StyledInputField key={field.label}>
+                    <StyledInput
+                        label={field.label}
+                        placeholder={field.placeholder}
+                    />
+                </StyledInputField>
+            ))}
             <StyledButtonField>
-                <Button>Enviar</Button>
+                <Button onClick={onSubmit}>Enviar</Button>
             </StyledButtonField>
         </StyledForm>
     )
@@ -59,4 +67,12 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const Primary: Story = {}
+export const Primary: Story = {
+    args: {
+        onSubmit: fn(),
+        fields: [
+            { label: 'Nome', placeholder: 'ex: João da Silva' },
+            { label: 'Email', placeholder: 'ex: joaosilva@email.com' },
+        ],
+    },
+}
