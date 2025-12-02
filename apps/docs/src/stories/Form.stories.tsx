@@ -2,12 +2,20 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { fn } from 'storybook/test'
 import { Button } from '@gabriel_veroneze/alfabit-button'
 import { Input } from '@gabriel_veroneze/alfabit-input'
+import { violet } from '@gabriel_veroneze/alfabit-tokens'
 import styled from 'styled-components'
 
+const StyledContainer = styled.div`
+    width: 45vw;
+`
+
 const StyledForm = styled.form`
+    background-color: ${violet.quaternary};
+    border-radius: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    padding: 3rem 5rem 3rem 3rem;
 `
 
 const StyledInputField = styled.div`
@@ -24,10 +32,6 @@ const StyledButtonField = styled.div`
     width: 100%;
 `
 
-const StyledInput = styled(Input)`
-    width: 100%;
-`
-
 interface FormProps {
     onSubmit: () => void
     fields: {
@@ -38,19 +42,21 @@ interface FormProps {
 
 const Form = ({ fields, onSubmit }: FormProps) => {
     return (
-        <StyledForm>
-            {fields.map((field) => (
-                <StyledInputField key={field.label}>
-                    <StyledInput
-                        label={field.label}
-                        placeholder={field.placeholder}
-                    />
-                </StyledInputField>
-            ))}
-            <StyledButtonField>
-                <Button onClick={onSubmit}>Enviar</Button>
-            </StyledButtonField>
-        </StyledForm>
+        <StyledContainer>
+            <StyledForm>
+                {fields.map((field) => (
+                    <StyledInputField key={field.label}>
+                        <Input
+                            label={field.label}
+                            placeholder={field.placeholder}
+                        />
+                    </StyledInputField>
+                ))}
+                <StyledButtonField>
+                    <Button onClick={onSubmit}>Enviar</Button>
+                </StyledButtonField>
+            </StyledForm>
+        </StyledContainer>
     )
 }
 
@@ -61,6 +67,17 @@ const meta = {
         layout: 'centered',
     },
     tags: ['autodocs'],
+    args: {
+        onSubmit: fn(),
+        fields: [
+            { label: 'Nome', placeholder: 'ex: João da Silva' },
+            { label: 'Email', placeholder: 'ex: joaosilva@email.com' },
+        ],
+    },
+    argTypes: {
+        onSubmit: { action: 'submitted' },
+        fields: { control: 'object' },
+    },
 } satisfies Meta<typeof Form>
 
 export default meta
