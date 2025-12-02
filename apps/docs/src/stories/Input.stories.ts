@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Input } from '@gabriel_veroneze/alfabit-input'
 
 const meta = {
-    title: 'Example/Input',
+    title: 'Moléculas/Input',
     component: Input,
     parameters: {
         layout: 'centered',
@@ -12,6 +12,7 @@ const meta = {
 } satisfies Meta<typeof Input>
 
 export default meta
+
 type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
