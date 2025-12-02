@@ -1,9 +1,9 @@
-import { Button } from '@gabriel_veroneze/alfabit-button'
-import { fn } from 'storybook/test'
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import { fn } from 'storybook/test'
+import { Button } from '@gabriel_veroneze/alfabit-button'
 
 const meta = {
-    title: 'Example/Button',
+    title: 'Moléculas/Button',
     component: Button,
     parameters: {
         layout: 'centered',
@@ -13,6 +13,7 @@ const meta = {
 } satisfies Meta<typeof Button>
 
 export default meta
+
 type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
