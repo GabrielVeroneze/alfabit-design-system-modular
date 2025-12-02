@@ -9,7 +9,24 @@ const meta = {
         layout: 'centered',
     },
     tags: ['autodocs'],
-    args: { onClick: fn() },
+    args: { onClick: fn(), children: 'Button', variant: 'primary', size: 'md' },
+    argTypes: {
+        onClick: {
+            action: 'clicked',
+            description: 'Evento de disparo ao clicar no botão',
+        },
+        children: { control: 'text', description: 'Texto do botão' },
+        variant: {
+            control: 'radio',
+            options: ['primary', 'secondary', 'tertiary'],
+            description: 'Variante do botão',
+        },
+        size: {
+            control: 'select',
+            options: ['xs', 'sm', 'md', 'lg'],
+            description: 'Tamanho do botão',
+        },
+    },
 } satisfies Meta<typeof Button>
 
 export default meta
