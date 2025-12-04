@@ -45,12 +45,9 @@ async function createComponent(componentName: string) {
                 continue
             }
 
-            if (
-                file.endsWith('.tsx') ||
-                file.endsWith('.ts') ||
-                file.endsWith('.json') ||
-                file.endsWith('.js')
-            ) {
+            const supportedExtensions = ['.tsx', '.ts', '.json', '.js']
+
+            if (supportedExtensions.some((ext) => file.endsWith(ext))) {
                 console.log(`Processando o arquivo: ${file}`)
 
                 let content = await fs.readFile(filePath, 'utf-8')
@@ -62,6 +59,7 @@ async function createComponent(componentName: string) {
                 )
 
                 await fs.writeFile(filePath, content)
+                console.log(`Arquivo atualizado: ${file}`)
             }
         }
 
@@ -74,7 +72,8 @@ async function createComponent(componentName: string) {
             ],
         ]
 
-        for (const [oldPath, newPath] of renames) {}
+        for (const [oldPath, newPath] of renames) {
+        }
     } catch (error) {
         console.error(`Erro ao criar o componente ${componentName}:`, error)
     }
