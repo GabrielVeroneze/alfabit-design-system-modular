@@ -66,6 +66,9 @@ importers:
       '@gabriel_veroneze/alfabit-input':
         specifier: workspace:*
         version: link:../../packages/alfabit-input
+      '@gabriel_veroneze/alfabit-textblock':
+        specifier: workspace:*
+        version: link:../../packages/alfabit-textblock
       '@gabriel_veroneze/alfabit-tokens':
         specifier: ^0.1.1
         version: 0.1.1
