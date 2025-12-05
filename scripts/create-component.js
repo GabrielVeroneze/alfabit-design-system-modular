@@ -1,7 +1,7 @@
-import fs from 'fs-extra'
-import path from 'path'
+const fs = require('fs-extra')
+const path = require('path')
 
-async function createComponent(componentName: string) {
+async function createComponent(componentName) {
     try {
         const templateDir = path.join(
             __dirname,
@@ -29,7 +29,9 @@ async function createComponent(componentName: string) {
         }
 
         // Copia o template de componente para o novo diretório
-        await fs.copy(templateDir, targetDir)
+        await fs.copy(templateDir, targetDir, {
+            filter: (src) => path.basename(src) !== 'node_modules',
+        })
         console.log(`Template copiado com sucesso para ${targetDir}`)
 
         // Substitui os placeholders no conteúdo dos arquivos
