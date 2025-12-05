@@ -14,21 +14,25 @@ async function createComponent(componentName: string) {
             `alfabit-${componentName.toLowerCase()}`,
         )
 
+        // Verifica se o diretório do template existe
         if (!fs.existsSync(templateDir)) {
             throw new Error(
                 `Não foi encontrado o diretório de template: ${targetDir}`,
             )
         }
 
+        // Verifica se o diretório de destino já existe
         if (fs.existsSync(targetDir)) {
             throw new Error(
                 `O diretório do componente ${componentName} já existe em: ${targetDir}`,
             )
         }
 
+        // Copia o template de componente para o novo diretório
         await fs.copy(templateDir, targetDir)
         console.log(`Template copiado com sucesso para ${targetDir}`)
 
+        // Substitui os placeholders no conteúdo dos arquivos
         const files = await fs.readdir(targetDir)
 
         for (const file of files) {
@@ -63,6 +67,7 @@ async function createComponent(componentName: string) {
             }
         }
 
+        // Renomeia os arquivos para refletir o nome do componente
         const renames = [
             ['src/Component.tsx', `src/${componentName}.tsx`],
             ['src/Component.styles.ts', `src/${componentName}.styles.ts`],
@@ -73,7 +78,20 @@ async function createComponent(componentName: string) {
         ]
 
         for (const [oldPath, newPath] of renames) {
+            const oldFullPath = path.join(targetDir, oldPath)
+            const newFullPath = path.join(targetDir, newPath)
+
+            if (fs.existsSync(oldFullPath)) {
+                await fs.rename(oldFullPath, newFullPath)
+                console.log(`Renomeando: ${oldFullPath} => ${newFullPath}`)
+            } else {
+                console.warn(
+                    `Aviso: Arquivo não encontrado para ser renomeado: ${oldPath}`,
+                )
+            }
         }
+
+        console.log(`Componente ${componentName} criado com sucesso!`)
     } catch (error) {
         console.error(`Erro ao criar o componente ${componentName}:`, error)
     }
