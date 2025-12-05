@@ -94,5 +94,16 @@ async function createComponent(componentName: string) {
         console.log(`Componente ${componentName} criado com sucesso!`)
     } catch (error) {
         console.error(`Erro ao criar o componente ${componentName}:`, error)
+        process.exit(1)
     }
 }
+
+// Exemplo de uso: node create-component.js Button
+const componentName = process.argv[2]
+
+if (!componentName) {
+    console.error('Por favor, forneça um nome para o componente.')
+    process.exit(1)
+}
+
+createComponent(componentName)
