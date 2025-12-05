@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { TextBlock } from '@gabriel_veroneze/alfabit-component'
+import { TextBlock } from '@gabriel_veroneze/alfabit-textblock'
 
 const meta = {
     title: 'Moléculas/TextBlock',
