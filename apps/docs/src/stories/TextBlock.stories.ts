@@ -8,8 +8,19 @@ const meta = {
         layout: 'centered',
     },
     tags: ['autodocs'],
-    args: {},
-    argTypes: {},
+    args: {
+        title: 'Título',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    },
+    argTypes: {
+        title: {
+            control: 'text',
+        },
+        description: {
+            control: 'text',
+        },
+    },
 } satisfies Meta<typeof TextBlock>
 
 export default meta
@@ -17,5 +28,9 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
-    args: {},
+    args: {
+        title: 'Título',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    },
 }
