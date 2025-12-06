@@ -11,7 +11,7 @@ const meta = {
     args: {
         title: 'Título',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum euismod lacus, at eleifend justo ultricies non. Donec ac purus pretium, malesuada elit quis, cursus urna. Curabitur tristique eleifend tellus in tincidunt. Donec quis euismod quam. Phasellus et interdum ligula.',
     },
     argTypes: {
         title: {
@@ -31,6 +31,6 @@ export const Primary: Story = {
     args: {
         title: 'Título',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum euismod lacus, at eleifend justo ultricies non. Donec ac purus pretium, malesuada elit quis, cursus urna. Curabitur tristique eleifend tellus in tincidunt. Donec quis euismod quam. Phasellus et interdum ligula.',
     },
 }
