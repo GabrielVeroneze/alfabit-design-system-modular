@@ -4,8 +4,9 @@
     "author": {
         "name": "Gabriel Veroneze"
     },
+    "private": true,
     "license": "MIT",
-    "version": "0.1.0",
+    "version": "0.0.0",
     "main": "dist/index.js",
     "module": "dist/index.esm.js",
     "types": "dist/index.d.ts",
@@ -31,8 +32,5 @@
         "rollup": "^4.53.3",
         "styled-components": "^6.1.19",
         "typescript": "^5.9.3"
-    },
-    "publishConfig": {
-        "access": "public"
     }
 }
