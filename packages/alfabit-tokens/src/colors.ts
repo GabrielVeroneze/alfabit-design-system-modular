@@ -1,8 +1,3 @@
-export const neutral = {
-    black: '#000000',
-    white: '#FFFFFF',
-}
-
 export const background = {
     light: '#FFFFFF',
     dark: '#F8F8F8',
@@ -18,6 +13,7 @@ export const gray = {
     divider: '#ededed',
     disabled: '#8a8a8a',
     white: '#FFFFFF',
+    black: '#000000',
 }
 
 export const blue = {
