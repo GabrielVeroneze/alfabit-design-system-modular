@@ -1,3 +1,8 @@
+export const neutral = {
+    black: '#000000',
+    white: '#FFFFFF',
+}
+
 export const background = {
     light: '#FFFFFF',
     dark: '#F8F8F8',
@@ -29,4 +34,16 @@ export const violet = {
     secondary: '#BE74F9',
     tertiary: '#E2BDFF',
     quaternary: '#F5E8FF',
+}
+
+export const green = {
+    primary: '#28a745',
+}
+
+export const red = {
+    primary: '#dc3545',
+}
+
+export const yellow = {
+    primary: '#ffc107',
 }
