@@ -1,5 +1,19 @@
 import { background, blue, gray, green, red, yellow } from './colors'
 
+export interface Theme {
+    colors: {
+        background: string
+        text: string
+        primary: string
+        secondary: string
+        black: string
+        white: string
+        success: string
+        error: string
+        warning: string
+    }
+}
+
 const commonColors = {
     black: gray.black,
     white: gray.white,
@@ -8,7 +22,7 @@ const commonColors = {
     warning: yellow.primary,
 }
 
-export const lightTheme = {
+export const lightTheme: Theme = {
     colors: {
         ...commonColors,
         background: background.light,
@@ -18,7 +32,7 @@ export const lightTheme = {
     },
 }
 
-export const darkTheme = {
+export const darkTheme: Theme = {
     colors: {
         ...commonColors,
         background: gray.primary,
@@ -27,3 +41,5 @@ export const darkTheme = {
         secondary: gray.tertiary,
     },
 }
+
+export const defaultTheme: Theme = lightTheme
