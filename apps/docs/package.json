@@ -15,7 +15,7 @@
         "@gabriel_veroneze/alfabit-button": "workspace:*",
         "@gabriel_veroneze/alfabit-input": "workspace:*",
         "@gabriel_veroneze/alfabit-textblock": "workspace:*",
-        "@gabriel_veroneze/alfabit-tokens": "^1.0.0",
+        "@gabriel_veroneze/alfabit-tokens": "workspace:*",
         "react": "^19.2.0",
         "react-dom": "^19.2.0",
         "styled-components": "^6.1.19"
