@@ -27,8 +27,8 @@ importers:
   apps/alfabit-demo:
     dependencies:
       '@gabriel_veroneze/alfabit-button':
-        specifier: ^0.1.0
-        version: 0.1.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(styled-components@6.1.19(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
+        specifier: ^1.0.0
+        version: 1.0.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(styled-components@6.1.19(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
       next:
         specifier: 16.0.5
         version: 16.0.5(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -73,8 +73,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/alfabit-textblock
       '@gabriel_veroneze/alfabit-tokens':
-        specifier: ^0.1.1
-        version: 0.1.1
+        specifier: workspace:*
+        version: link:../../packages/alfabit-tokens
       react:
         specifier: ^19.2.0
         version: 19.2.0
@@ -809,15 +809,12 @@ packages:
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@gabriel_veroneze/alfabit-button@0.1.0':
-    resolution: {integrity: sha512-FV29TteS/SSyz489R9JY3QQK0oYiESGt8x4iXK3TdnJRSm3aAsJdF35GKXfxIx99N5gZe8saJOcJPYgSe4JBWg==}
+  '@gabriel_veroneze/alfabit-button@1.0.0':
+    resolution: {integrity: sha512-J36xVXfFaPSYkvkYy79BjtYwDP+3HFQbWsH6e12enwzK6WGKDpQ2FOkEmbI9HxKnU1+7S5RhiUVNXf/c85GVMw==}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
       react-dom: ^18.0.0 || ^19.0.0
       styled-components: ^5.0.0 || ^6.0.0
-
-  '@gabriel_veroneze/alfabit-tokens@0.1.1':
-    resolution: {integrity: sha512-yVBLORm5aYm36xSXtiY/j7FWuQFek4s69oC3GoAXF9OWpH3kAWr9b79HF9KLV0QOVzr59YZ7Mp7DqSTp+QdOIw==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -4168,13 +4165,11 @@ snapshots:
       '@eslint/core': 0.17.0
       levn: 0.4.1
 
-  '@gabriel_veroneze/alfabit-button@0.1.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(styled-components@6.1.19(react-dom@19.2.0(react@19.2.0))(react@19.2.0))':
+  '@gabriel_veroneze/alfabit-button@1.0.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(styled-components@6.1.19(react-dom@19.2.0(react@19.2.0))(react@19.2.0))':
     dependencies:
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
       styled-components: 6.1.19(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-
-  '@gabriel_veroneze/alfabit-tokens@0.1.1': {}
 
   '@humanfs/core@0.19.1': {}
 
@@ -5527,7 +5522,7 @@ snapshots:
       eslint: 9.39.1
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(eslint@9.39.1))(eslint@9.39.1)
-      eslint-plugin-import: 2.32.0(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.1)
+      eslint-plugin-import: 2.32.0(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(eslint@9.39.1))(eslint@9.39.1))(eslint@9.39.1)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.39.1)
       eslint-plugin-react: 7.37.5(eslint@9.39.1)
       eslint-plugin-react-hooks: 7.0.1(eslint@9.39.1)
@@ -5560,7 +5555,7 @@ snapshots:
       tinyglobby: 0.2.15
       unrs-resolver: 1.11.1
     optionalDependencies:
-      eslint-plugin-import: 2.32.0(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.1)
+      eslint-plugin-import: 2.32.0(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(eslint@9.39.1))(eslint@9.39.1))(eslint@9.39.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -5574,7 +5569,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.32.0(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.1):
+  eslint-plugin-import@2.32.0(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(eslint@9.39.1))(eslint@9.39.1))(eslint@9.39.1):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.9
