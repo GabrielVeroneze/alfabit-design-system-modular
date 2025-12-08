@@ -11,6 +11,7 @@ export interface Theme {
         success: string
         error: string
         warning: string
+        disabled: string
     }
 }
 
@@ -20,6 +21,7 @@ const commonColors = {
     success: green.primary,
     error: red.primary,
     warning: yellow.primary,
+    disabled: gray.disabled,
 }
 
 export const lightTheme: Theme = {
