@@ -13,6 +13,7 @@ export const gray = {
     divider: '#ededed',
     disabled: '#8a8a8a',
     white: '#FFFFFF',
+    black: '#000000',
 }
 
 export const blue = {
@@ -29,4 +30,16 @@ export const violet = {
     secondary: '#BE74F9',
     tertiary: '#E2BDFF',
     quaternary: '#F5E8FF',
+}
+
+export const green = {
+    primary: '#28a745',
+}
+
+export const red = {
+    primary: '#dc3545',
+}
+
+export const yellow = {
+    primary: '#ffc107',
 }

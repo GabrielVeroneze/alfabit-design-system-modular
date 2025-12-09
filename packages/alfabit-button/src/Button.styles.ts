@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import { blue, gray } from '@gabriel_veroneze/alfabit-tokens'
 import { ButtonProps } from './Button'
 
 export const StyledButton = styled.button<ButtonProps>`
@@ -13,45 +12,41 @@ export const StyledButton = styled.button<ButtonProps>`
     line-height: 24px;
     transition: all 0.2s ease-in-out;
 
-    ${({ variant }) =>
+    ${({ variant, theme }) =>
         variant === 'primary' &&
         css`
-            background: ${blue.primary};
+            background: ${theme.colors.primary};
             border: none;
-            color: ${gray.white};
+            color: ${theme.colors.white};
 
             &:hover {
-                background: ${blue.hover};
+                background: ${theme.colors.primary};
             }
 
             &:active {
-                background: ${blue.click};
+                background: ${theme.colors.primary};
             }
 
             &:disabled {
-                background: ${gray.disabled};
+                background: ${theme.colors.disabled};
                 cursor: not-allowed;
             }
         `}
 
-    ${({ variant }) =>
+    ${({ variant, theme }) =>
         variant === 'secondary' &&
         css`
             background: transparent;
-            border: 2px solid ${blue.primary};
-            color: ${blue.primary};
-
-            &:hover {
-                background: #ede9ff;
-            }
+            border: 2px solid ${theme.colors.primary};
+            color: ${theme.colors.primary};
 
             &:active {
-                background: #d5ccff;
+                background: ${theme.colors.secondary};
             }
 
             &:disabled {
-                border-color: #c3c3c3;
-                color: #c3c3c3;
+                border-color: ${theme.colors.disabled};
+                color: ${theme.colors.disabled};
                 cursor: not-allowed;
             }
         `}
