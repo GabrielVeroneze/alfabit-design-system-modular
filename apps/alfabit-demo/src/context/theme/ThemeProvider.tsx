@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Theme } from '@gabriel_veroneze/alfabit-tokens'
+import { defaultTheme, Theme } from '@gabriel_veroneze/alfabit-tokens'
 import { ThemeContext } from './ThemeContext'
 
 interface ThemeProviderProps {
@@ -9,7 +9,7 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-    const [appTheme, setAppTheme] = useState<Theme | undefined>(undefined)
+    const [appTheme, setAppTheme] = useState<Theme | undefined>(defaultTheme)
 
     const changeTheme = (theme: Theme) => {
         setAppTheme(theme)
