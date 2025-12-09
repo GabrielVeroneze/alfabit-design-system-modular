@@ -41,3 +41,38 @@ jobs:
 
             - name: Run build
               run: pnpm run build
+
+    release:
+        needs: build
+        if: github.ref == 'refs/heads/main'
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 24
+
+            - name: Install pnpm
+              uses: pnpm/action-setup@v2
+              with:
+                  version: 10
+
+            - name: Install dependencies
+              run: pnpm install --frozen-lockfile
+
+            - name: Setup Git
+              run: |
+                  git config --local user.email "github-actions[bot]@users.noreply.github.com"
+                  git config --local user.name "github-actions[bot]"
+
+            - name: Create Release and Publish to npm
+              run: |
+                  pnpm changeset version && git add . && git commit -m 'chore: release' && pnpm publish -r --access public --no-git-checks
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
